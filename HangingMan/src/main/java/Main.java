@@ -1,3 +1,7 @@
+
+import java.io.Console;
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,8 +13,18 @@
  */
 public class Main {
     
+    public static String name;
     public static void main(String[] args) {
-        System.out.println("hello world");
+        Scanner sc = new Scanner(System.in);
+        
+        
+        System.out.println("Hello To Hangman 9000");
+        System.out.println("Please Enter Your Name");
+        
+        
+         name = sc.next();
+        
+        System.out.println("hello " + name);
        //comments is nessesary :-)
     }
     
