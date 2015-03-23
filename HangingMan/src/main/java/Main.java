@@ -35,5 +35,6 @@ public class Main {
     
     public static void checkChars(){
         //here we will check the input if it is in the secret word
+        
     }
 }
