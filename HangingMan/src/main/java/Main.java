@@ -28,14 +28,11 @@ public class Main {
         
         System.out.print("Please enter the first letter :");
         String chars = sc.next();
-        System.out.println("You have entered  " + chars);
-        //who wrote this!!! ???
-       //comments is nessesary :-)
-        //who wrote the coment? this is by the way Me :-)
-
-        //push
-        //glad we have that figured out now. :)
-        
+        System.out.println("You have entered  " + chars);     
     }
     
+        public static void checkChars(){
+        //here we will check the input if it is in the secret word
+        
+    }
 }
