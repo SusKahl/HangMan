@@ -25,6 +25,7 @@ public class Main {
          name = sc.next();
         
         System.out.println("hello " + name);
+        //who wrote this!!! ???
        //comments is nessesary :-)
     }
     
