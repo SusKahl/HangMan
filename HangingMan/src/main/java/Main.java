@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Poul
  */
 public class Main {
-    
+    public static String secretWord = "Hello";
     public static String name;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -25,9 +25,14 @@ public class Main {
          name = sc.next();
         
         System.out.println("hello " + name);
+        
+        System.out.print("Please enter the first letter :");
+        String chars = sc.next();
+        System.out.println("You have entered  " + chars);
         //who wrote this!!! ???
        //comments is nessesary :-)
         //who wrote the coment? this is by the way Me :-)
+        //push
     }
     
 }
