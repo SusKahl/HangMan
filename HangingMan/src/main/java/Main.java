@@ -27,6 +27,7 @@ public class Main {
         System.out.println("hello " + name);
         //who wrote this!!! ???
        //comments is nessesary :-)
+        //who wrote the coment? this is by the way Me :-)
     }
     
 }
