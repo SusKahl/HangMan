@@ -90,7 +90,7 @@ Vagrant.configure(2) do |config|
 	sudo apt-get install -y oracle-java8-installer
 	#install git
 	sudo apt-get update
-	sudo apt-get install git
+	sudo apt-get -y install git
 	#this will install jenkins 
 	wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 	sudo echo "deb http://pkg.jenkins-ci.org/debian binary/" >> /etc/apt/sources.list
