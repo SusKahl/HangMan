@@ -26,18 +26,20 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Hello To Hangman 9000");
-        
+
         System.out.println("Please Enter Your Name");
         name = sc.next();
         System.out.println("hello " + name);
-        
+        guesses ="";
         done = false;
         dashes = makeDashes(secretWord);
-        
+
         while (!done) {
-            System.out.print("Please enter the first letter :");
-            String chars = sc.next();
-            System.out.println("You have entered  " + chars);
+            System.out.println("Here is your word: " + dashes);
+            System.out.println("Guesses so far: " + guesses);
+            System.out.print("Please enter a letter :");
+            String guess = sc.next();
+            System.out.println("You have entered  " + guess);
             letter = guess.charAt(0);
             guesses += letter;
             if (secretWord.indexOf(letter) < 0) // not there
