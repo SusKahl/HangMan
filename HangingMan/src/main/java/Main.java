@@ -34,7 +34,10 @@ public class Main {
         
     }
     
-    
+    public static void checkChars(){
+        //here we will check the input if it is in the secret word
+        
+    }
     public static Boolean usedChars(String input){
         
         if(!usedChars.contains(input)){
