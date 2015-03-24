@@ -1,7 +1,9 @@
 
+
 import java.io.Console;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Stack;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -39,10 +41,14 @@ public class Main {
     public static Boolean done;
     public static String guess;
     public static String guesses;
+    
+
+    public static Stack<String> usedChars;
 
     public static void main(String[] args) {
         
-        
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Hello To Hangman 9000");
         System.out.println("Please Enter Your Name");
@@ -56,35 +62,9 @@ public class Main {
             System.out.print("_ ");
         }
         System.out.println();
-        
-        System.out.print("Please enter the first letter :");
-        String chars = sc.next();
-        
-        System.out.println("You have entered  " + chars);     
+            
     }
     
-        public static void checkChars(){
-        //here we will check the input if it is in the secret word
-
-        done = false;
-        dashes = makeDashes(secretWord);
-        
-        while (!done) {
-            System.out.print("Please enter the first letter :");
-            String chars = sc.next();
-            System.out.println("You have entered  " + chars);
-            letter = guess.charAt(0);
-            guesses += letter;
-            if (secretWord.indexOf(letter) < 0) // not there
-            {
-                System.out.print("bad guess - ");
-            } else // letter is in the secret
-            {
-                //	put it in dashes where it belongs
-                checkChars(secretWord, dashes, letter);
-            }
-        }
-    }
 
     public static void checkChars(String secret, StringBuffer dashes, char letter) {
         //here we will check the input if it is in the secret word              
@@ -105,4 +85,16 @@ public class Main {
         }
         return dashes;
     }
-}
+    
+    public static Boolean usedChars(String input) {
+
+        if (!usedChars.contains(input)) {
+            usedChars.push(input);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    }
