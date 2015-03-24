@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 /**
  *
- * @author Poul
+ * @author Poul-aceratops,Sus-homimus,Nick-rsaurus-Mike-roraptor
  */
 public class Main {
 
@@ -21,21 +21,21 @@ public class Main {
     public static Boolean done;
     public static String guess;
     public static String guesses;
-    
+
     public static Stack<String> usedChars;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Hello To Hangman 9000");
-        
+
         System.out.println("Please Enter Your Name");
         name = sc.next();
         System.out.println("hello " + name);
-        
+
         done = false;
         dashes = makeDashes(secretWord);
-        
+
         while (!done) {
             System.out.print("Please enter the first letter :");
             String chars = sc.next();
@@ -65,15 +65,15 @@ public class Main {
 
     }
 
-    public static Boolean usedChars(String input){
-        
-        if(!usedChars.contains(input)){
-             usedChars.push(input);
-             return true;
-        }else{
-             return false;
+    public static Boolean usedChars(String input) {
+
+        if (!usedChars.contains(input)) {
+            usedChars.push(input);
+            return true;
+        } else {
+            return false;
         }
-        
+
     }
     public static StringBuffer makeDashes(String s) {
         StringBuffer dashes = new StringBuffer(s.length());
