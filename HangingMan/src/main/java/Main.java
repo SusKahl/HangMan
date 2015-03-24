@@ -11,29 +11,49 @@ import java.util.Scanner;
  *
  * @author Poul
  */
-public class Main {
+public class Main
+{
+
     public static String secretWord = "Hello";
     public static String name;
-    public static void main(String[] args) {
+    public static StringBuffer dashes;
+    public static String Guess;
+    public static void main(String[] args)
+    {
         Scanner sc = new Scanner(System.in);
-        
-        
+
         System.out.println("Hello To Hangman 9000");
         System.out.println("Please Enter Your Name");
-        
-        
-         name = sc.next();
-        
+
+        name = sc.next();
+
         System.out.println("hello " + name);
-        
+
         System.out.print("Please enter the first letter :");
         String chars = sc.next();
         System.out.println("You have entered  " + chars);
-        
+
     }
-    
-    
-    public static void checkChars(){
+
+    public static void checkChars()
+    {
         //here we will check the input if it is in the secret word
     }
+
+    public static void currentStatus()
+    {
+        Scanner sc = new Scanner(System.in);
+        Guess = "";
+
+        boolean done = false;
+        while (!done)
+        {
+            System.out.println("Your word to guess: " + dashes);
+            System.out.println("Gusses so far: " + guesses);
+            System.out.println("Enter a guess: ");
+            Guess = sc.next();
+        }
+
+    }
+
 }
