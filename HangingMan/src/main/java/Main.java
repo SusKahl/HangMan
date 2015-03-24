@@ -1,6 +1,7 @@
 
 import java.io.Console;
 import java.util.Scanner;
+import java.util.Stack;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,9 +15,10 @@ import java.util.Scanner;
 public class Main {
     public static String secretWord = "Hello";
     public static String name;
+    public static Stack<String> usedChars;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+        usedChars = new Stack<>();
         
         System.out.println("Hello To Hangman 9000");
         System.out.println("Please Enter Your Name");
@@ -33,8 +35,14 @@ public class Main {
     }
     
     
-    public static void checkChars(){
-        //here we will check the input if it is in the secret word
+    public static Boolean usedChars(String input){
+        
+        if(!usedChars.contains(input)){
+             usedChars.push(input);
+             return true;
+        }else{
+             return false;
+        }
         
     }
 }
