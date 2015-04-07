@@ -1,8 +1,5 @@
-before_script: cd ./HangingMan
-script: cd ./HangingMan
 language: java
 install: ant resolve    
 jdk:
 - oraclejdk8
-
-sudo: true
+before_script: cd HangingMan/pom.xml
