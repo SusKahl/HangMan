@@ -4,3 +4,5 @@ language: java
 install: ant resolve    
 jdk:
 - oraclejdk8
+
+sudo: true
