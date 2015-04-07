@@ -1,4 +1,4 @@
-before_script: cd ./HangingMan
+before_script: cd HangingMan
 language: java  
 jdk:
 - oraclejdk8
