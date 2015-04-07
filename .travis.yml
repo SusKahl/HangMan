@@ -1,3 +1,4 @@
 language: java
+install: ant resolve
 jdk:
 - oraclejdk8
