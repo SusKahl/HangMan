@@ -1,5 +1,5 @@
+script: cd HangingMan
 language: java
 install: ant resolve    
 jdk:
 - oraclejdk8
-script: cd HangingMan && npm install && npm test
