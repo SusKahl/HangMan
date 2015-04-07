@@ -1,4 +1,5 @@
 before_script: cd ./HangingMan
+script: cd ./HangingMan
 language: java
 install: ant resolve    
 jdk:
