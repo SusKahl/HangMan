@@ -2,5 +2,3 @@ before_script: cd HangingMan
 language: java  
 jdk:
 - oraclejdk8
-
-sudo: true
