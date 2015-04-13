@@ -50,7 +50,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Hello To Hangman 9000");
-        System.out.println("Please Enter Your Name");
+        System.out.print("Please Enter Your Name : ");
         name = sc.next();
         System.out.println("Hello " + name);
 
@@ -71,8 +71,10 @@ public class Main {
         dashes = makeDashes(wordToGuess);
         while (!done) {
             System.out.println("Your word to guess: " + dashes);
-            System.out.println("Guessed so far: " + guesses);
-            System.out.println("Enter a guess: ");
+
+            System.out.println("Gusses so far: " + guesses + " ");
+
+            System.out.print("Enter a guess: ");
             guess = sc.next().trim();
             letter = guess.toCharArray()[0];
             guesses += guess;
