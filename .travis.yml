@@ -1,2 +1,2 @@
-before_script: cd HangingMan
+before_script: cd HangingMan; rm -rf target
 language: java  

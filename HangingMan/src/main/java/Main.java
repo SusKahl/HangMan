@@ -15,7 +15,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        new Hangman();
+        Hangman Hangman = new Hangman();
     }
 
 }
