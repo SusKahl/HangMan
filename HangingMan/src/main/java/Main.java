@@ -51,7 +51,7 @@ public class Main {
         System.out.println("Hello To Hangman 9000");
         System.out.println("Please Enter Your Name");
         name = sc.next();
-        System.out.println("hello " + name);
+        System.out.println("Hello " + name);
 
         randomNumber = randomGenerator.nextInt(wordList.length);
         wordToGuess = wordList[randomNumber];
@@ -71,30 +71,36 @@ public class Main {
         dashes = makeDashes(wordToGuess);
         while (!done) {
             System.out.println("Your word to guess: " + dashes);
-            System.out.println("Gusses so far: " + guesses);
+            System.out.println("Guessed so far: " + guesses);
             System.out.println("Enter a guess: ");
             guess = sc.next().trim();
+            letter = guess.toCharArray()[0];
             guesses += guess;
 
             if (guess.length() == 1) {
                 checkChars(wordToGuess, dashes, letter);
             } else {
                 tries++;
-                System.out.println("you have " + (10 - tries) + " left");
+                System.out.println("You have " + (10 - tries) + " left");
+            }
+            
+            if(dashes.toString().equals(wordToGuess)){
+                System.out.println("YOU WIN!");
+                done = true;
             }
 
             if (guess.length() >= 2) {
                 if (guess.equals(wordToGuess)) {
-                    System.out.println("you win!");
+                    System.out.println("YOU WIN!");
                 } else {
                     tries++;
-                    System.out.println("you have " + (10 - tries) + " left");
+                    System.out.println("You have " + (10 - tries) + " left");
                 }
 
             }
 
             if (tries == 10) {
-                System.out.println("you lose");
+                System.out.println("YOU LOSE!");
                 done = true;
             }
         }
@@ -103,12 +109,14 @@ public class Main {
     public static void checkChars(String secret, StringBuffer dashes, char letter) {
         //here we will check the input if it is in the secret word              
 
-        for (int index = 0; index < secret.length(); index++) {
-            if (secret.charAt(index) == letter) {
-                dashes.setCharAt(index, letter);
-            }
+        int index = 0;
+        
+        for (int i = index; i < secret.length(); i++) {
+            if (secret.charAt(i) == letter) {
+                dashes.setCharAt(i, letter);
+            } 
         }
-        System.out.print("good guess - ");
+        System.out.print("Good guess - ");
 
     }
 
