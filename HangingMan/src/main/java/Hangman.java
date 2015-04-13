@@ -47,12 +47,15 @@ public class Hangman {
     public  Stack<String> usedChars;
     
     public Hangman(){
+    }
+    
+    public void start(){
         Scanner sc = new Scanner(System.in);
 
-//        System.out.println("Hello To Hangman 9000");
-//        System.out.print("Please Enter Your Name : ");
-//        name = sc.next();
-//        System.out.println("Hello " + name);
+        System.out.println("Hello To Hangman 9000");
+        System.out.print("Please Enter Your Name : ");
+        name = sc.next();
+        System.out.println("Hello " + name);
 
         randomNumber = randomGenerator.nextInt(wordList.length);
         wordToGuess = wordList[randomNumber];
@@ -63,6 +66,7 @@ public class Hangman {
         System.out.println();
         currentStatus();
     }
+    
     public  void currentStatus() {
         done = false;
         guesses = "";
