@@ -41,6 +41,7 @@ public class Main {
     public static Boolean done;
     public static String guess;
     public static String guesses;
+    public static int tries;
 
     public static Stack<String> usedChars;
 
@@ -65,7 +66,6 @@ public class Main {
     }
 
     public static void currentStatus() {
-        int tries = 0;
         done = false;
         guesses = "";
         dashes = makeDashes(wordToGuess);
@@ -79,9 +79,6 @@ public class Main {
 
             if (guess.length() == 1) {
                 checkChars(wordToGuess, dashes, letter);
-            } else {
-                tries++;
-                System.out.println("You have " + (10 - tries) + " left");
             }
             
             if(dashes.toString().equals(wordToGuess)){
@@ -92,6 +89,7 @@ public class Main {
             if (guess.length() >= 2) {
                 if (guess.equals(wordToGuess)) {
                     System.out.println("YOU WIN!");
+                    done = true;
                 } else {
                     tries++;
                     System.out.println("You have " + (10 - tries) + " left");
@@ -99,7 +97,7 @@ public class Main {
 
             }
 
-            if (tries == 10) {
+            if (tries == 11) {
                 System.out.println("YOU LOSE!");
                 done = true;
             }
@@ -108,15 +106,22 @@ public class Main {
 
     public static void checkChars(String secret, StringBuffer dashes, char letter) {
         //here we will check the input if it is in the secret word              
-
+        boolean correct = false;
         int index = 0;
         
         for (int i = index; i < secret.length(); i++) {
             if (secret.charAt(i) == letter) {
                 dashes.setCharAt(i, letter);
-            } 
+                correct = true;
+            }
         }
-        System.out.print("Good guess - ");
+        
+        if(correct){
+            System.out.println("Good guess -");
+        } else{
+            System.out.println("You have " + (10 - tries) + " left");
+            tries++;
+        }
 
     }
 
