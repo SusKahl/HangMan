@@ -73,6 +73,103 @@ public class Main {
             System.out.println("Your word to guess: " + dashes);
 
             System.out.println("Gusses so far: " + guesses + " ");
+            
+            switch(tries){
+                case 1: 
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 2: 
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 3: 
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 4: 
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 5: 
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 6:  
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |        H");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 7:  
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |       |H");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 8:  
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |       |H|");
+                    System.out.println("   |   ");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 9:  
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |       |H|");
+                    System.out.println("   |       | |");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 10:  
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |       |H|");
+                    System.out.println("   |       | |");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"");
+                    break;
+                case 11:  
+                    System.out.println("   |---------   ");
+                    System.out.println("   |/       |");
+                    System.out.println("   |        O");
+                    System.out.println("   |       |H|");
+                    System.out.println("   |       | |");
+                    System.out.println("   |   ");
+                    System.out.println("/^^^^^\"    YOU LOSE!!!!");
+                    break;
+                    
+            }
 
             System.out.print("Enter a guess: ");
             guess = sc.next().trim();
