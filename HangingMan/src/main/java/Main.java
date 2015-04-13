@@ -93,8 +93,8 @@ public class Main {
                     System.out.println("YOU WIN!");
                     done = true;
                 } else {
-                    tries++;
                     System.out.println("You have " + (10 - tries) + " left");
+                    tries++;
                 }
 
             }
