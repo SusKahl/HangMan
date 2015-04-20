@@ -38,6 +38,7 @@ Vagrant.configure(2) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "D:\\shared\\data", "/vagrant_data"
+  config.vm.synced_folder "./data", "/shared"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -65,38 +66,38 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
-	 #web.vm.network "forwarded_port", guest: 8080, host: 8080
 	 web.vm.network "forwarded_port", guest: 22, host: 2233
 	 sudo add-apt-repository ppa:webupd8team/java #adds the repo from webupd8team
      sudo apt-get update #updates the local repo list
-	 # sudo apt-get install -y nodejs #installs nodejs server
-	 #sudo apt-get install -y tomcat7
-	 #echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-	 #sudo apt-get install -y oracle-java8-installer #install java8 from repo from webupd8team
-	 
-	 
-	 #sudo nodejs /vagrant_data/server.js #runs the nodejs server
    SHELL
    
    config.vm.define "Compulsory" do |web|
 	web.vm.network "forwarded_port", guest: 8080, host: 8080
 	web.vm.provision "shell", inline: <<-SHELL
 	
-	#sudo apt-get install -y tomcat7
-	#echo "I Did it!!! yepii" >> /var/lib/tomcat7/webapps/ROOT/index.html
+	#this will install Java 8
 	sudo add-apt-repository ppa:webupd8team/java
 	sudo apt-get update
 	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | 	sudo /usr/bin/debconf-set-selections
 	sudo apt-get install -y oracle-java8-installer
+	
 	#install git
 	sudo apt-get update
 	sudo apt-get -y install git
+	
 	#this will install jenkins 
 	wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 	sudo echo "deb http://pkg.jenkins-ci.org/debian binary/" >> /etc/apt/sources.list
 	sudo apt-get update
-	sudo apt-get install -y jenkins
-
+	sudo apt-get install --force-yes -y jenkins
+	sudo cp /shared/hang.zip /var/lib/jenkins
+	
+	#this will install zip support
+	sudo apt-get update
+	sudo apt-get -y install zip
+	sudo unzip -o /var/lib/jenkins/hang.zip -d /var/lib/jenkins/
+	sudo chown -R jenkins:jenkins /var/lib/jenkins
+	sudo service jenkins restart
    SHELL
    end
    
