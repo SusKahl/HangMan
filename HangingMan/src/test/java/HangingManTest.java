@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import com.sun.xml.internal.fastinfoset.util.CharArray;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,6 +42,7 @@ public class HangingManTest {
     //
     @Test
     public void TestPopulateArray() {
+        //Testing whether the array in the hangman game, is actually the one we create
         Hangman hm = new Hangman();
         String[] expected = hm.wordList;
         String[] actual = new String[]
@@ -64,6 +66,7 @@ public class HangingManTest {
     
     @Test
     public void TestMakeDashes() {
+        //Testing whether the length of the StringBuffer is correct, according to the word
         Hangman hm = new Hangman();
         String word = "expected"; 
         StringBuffer expected = new StringBuffer("--------");
@@ -73,7 +76,44 @@ public class HangingManTest {
     }
     
     @Test
-    public void Test(){
+    public void TestCheckCharsTrue(){
+        //Testing for an input that exists in the word you need to guess
+        Hangman hm = new Hangman();
+        String word = "expected";
+        String letter = "x";
+        StringBuffer dashes = new StringBuffer("--------");
         
+        boolean expected = true;
+        boolean actual = hm.checkChars(word, dashes, letter.toCharArray()[0]);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void TestCheckCharsFalse(){
+        //Testing for an input that does not exist in the word you need to guess
+        Hangman hm = new Hangman();
+        String word = "expected";
+        String letter = "s";
+        StringBuffer dashes = new StringBuffer("--------");
+        
+        boolean expected = true;
+        boolean actual = hm.checkChars(word, dashes, letter.toCharArray()[0]);
+        
+        assertNotSame(expected, actual);
+    }
+    
+    @Test
+    public void TestCheckCharsInputNumber(){
+        //Testing for an input that isn't a letter but a number
+        Hangman hm = new Hangman();
+        String word = "expected";
+        String letter = "1";
+        StringBuffer dashes = new StringBuffer("--------");
+        
+        boolean expected = true;
+        boolean actual = hm.checkChars(word, dashes, letter.toCharArray()[0]);
+        
+        assertNotSame(expected, actual);
     }
 }

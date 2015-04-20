@@ -179,7 +179,12 @@ public class Hangman {
             guesses += guess;
 
             if (guess.length() == 1) {
-                checkChars(wordToGuess, dashes, letter);
+                if(checkChars(wordToGuess, dashes, letter)){
+                System.out.println("Good guess -");
+                } else{
+                System.out.println("You have " + (10 - tries) + " left");
+                tries++;
+                }
             }
             
             if(dashes.toString().equals(wordToGuess)){
@@ -205,7 +210,7 @@ public class Hangman {
         }
     }
 
-    public void checkChars(String secret, StringBuffer dashes, char letter) {
+    public boolean checkChars(String secret, StringBuffer dashes, char letter) {
         //here we will check the input if it is in the secret word              
         boolean correct = false;
         int index = 0;
@@ -216,13 +221,7 @@ public class Hangman {
                 correct = true;
             }
         }
-        
-        if(correct){
-            System.out.println("Good guess -");
-        } else{
-            System.out.println("You have " + (10 - tries) + " left");
-            tries++;
-        }
+        return correct;
 
     }
 
