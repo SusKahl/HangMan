@@ -67,7 +67,7 @@ public class Hangman {
         currentStatus();
     }
     
-    public  void currentStatus() {
+    public void currentStatus() {
         done = false;
         guesses = "";
         dashes = makeDashes(wordToGuess);
@@ -205,7 +205,7 @@ public class Hangman {
         }
     }
 
-    public  void checkChars(String secret, StringBuffer dashes, char letter) {
+    public void checkChars(String secret, StringBuffer dashes, char letter) {
         //here we will check the input if it is in the secret word              
         boolean correct = false;
         int index = 0;
@@ -226,15 +226,15 @@ public class Hangman {
 
     }
 
-    public  StringBuffer makeDashes(String s) {
+    public StringBuffer makeDashes(String s) {
         StringBuffer dashes = new StringBuffer(s.length());
         for (int count = 0; count < s.length(); count++) {
-            dashes.append('_');
+            dashes.append('-');
         }
         return dashes;
     }
 
-    public  Boolean usedChars(String input) {
+    public Boolean usedChars(String input) {
 
         if (!usedChars.contains(input)) {
             usedChars.push(input);

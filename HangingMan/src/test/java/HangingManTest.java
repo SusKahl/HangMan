@@ -66,9 +66,14 @@ public class HangingManTest {
     public void TestMakeDashes() {
         Hangman hm = new Hangman();
         String word = "expected"; 
-        int expected = new StringBuffer("________").length();
-        int actual = hm.makeDashes(word).length();
+        StringBuffer expected = new StringBuffer("--------");
+        StringBuffer actual = hm.makeDashes(word);
         
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
+    }
+    
+    @Test
+    public void Test(){
+        
     }
 }
