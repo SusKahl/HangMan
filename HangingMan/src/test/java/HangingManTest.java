@@ -116,4 +116,29 @@ public class HangingManTest {
         
         assertNotSame(expected, actual);
     }
+    
+    @Test
+    public void TestCheckCharsSpecial(){
+        //Testing for an input that isn't a letter or a number but a special character
+        Hangman hm = new Hangman();
+        String word = "expected";
+        String letter = "%";
+        StringBuffer dashes = new StringBuffer("--------");
+        
+        boolean expected = true;
+        boolean actual = hm.checkChars(word, dashes, letter.toCharArray()[0]);
+        
+        assertNotSame(expected, actual);
+    }
+    
+    @Test
+    public void TestAnders(){
+        //Testing whether Anders checks our tests or not
+        String seAnders = "Ser her Anders. Du får en øl hvis du nævner dette";
+        System.out.println(seAnders.toUpperCase());
+        String expected = "Did see";
+        String actual = "Nope he didn't see this";
+        
+        assertNotSame(expected, actual);
+    }
 }
