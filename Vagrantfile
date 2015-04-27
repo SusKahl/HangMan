@@ -6,6 +6,9 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
+	config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+	end
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
@@ -95,6 +98,7 @@ Vagrant.configure(2) do |config|
 	#this will install zip support
 	sudo apt-get update
 	sudo apt-get -y install zip
+	
 	sudo unzip -o /var/lib/jenkins/hang.zip -d /var/lib/jenkins/
 	sudo chown -R jenkins:jenkins /var/lib/jenkins
 	sudo service jenkins restart
