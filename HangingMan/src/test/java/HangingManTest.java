@@ -68,7 +68,7 @@ public class HangingManTest {
         //Testing whether the length of the StringBuffer is correct, according to the word
         Hangman hm = new Hangman();
         String word = "expected"; 
-        StringBuffer expected = new StringBuffer("--------");
+        StringBuffer expected = new StringBuffer("--------"); 
         StringBuffer actual = hm.makeDashes(word);
         
         assertEquals(expected.toString(), actual.toString());
