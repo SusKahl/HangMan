@@ -1,0 +1,2 @@
+for at jenkins kan køre så skal du hente følgende fil og lægge i /data
+https://erhvervsakademisydvest-my.sharepoint.com/personal/poul2091_easv365_dk/_layouts/15/guestaccess.aspx?guestaccesstoken=ZcMhNU%2baGC42FgDrdtZ%2fs3pWFn8itEkG817nyU1mHYE%3d&docid=01fac3d0e4a7a4036b8235e1bb28c7375
